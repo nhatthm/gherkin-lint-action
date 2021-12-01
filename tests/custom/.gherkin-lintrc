@@ -1,0 +1,69 @@
+{
+    "file-name": [
+        "on",
+        {
+            "style": "PascalCase"
+        }
+    ],
+    "indentation": "on",
+    "max-scenarios-per-file": [
+        "on",
+        {
+            "maxScenarios": 10,
+            "countOutlineExamples": true
+        }
+    ],
+    "name-length": [
+        "on",
+        {
+            "Feature": 70,
+            "Scenario": 120,
+            "Step": 70
+        }
+    ],
+    "new-line-at-eof": [
+        "on",
+        "yes"
+    ],
+    "no-background-only-scenario": "on",
+    "no-dupe-feature-names": "on",
+    "no-dupe-scenario-names": [
+        "on",
+        "in-feature"
+    ],
+    "no-duplicate-tags": "on",
+    "no-empty-background": "on",
+    "no-empty-file": "on",
+    "no-examples-in-scenarios": "on",
+    "no-files-without-scenarios": "on",
+    "no-homogenous-tags": "on",
+    "no-multiple-empty-lines": "on",
+    "no-partially-commented-tag-lines": "on",
+    "no-restricted-tags": [
+        "on",
+        {
+            "tags": [
+                "@dev",
+                "@watch",
+                "@wip"
+            ]
+        }
+    ],
+    "no-scenario-outlines-without-examples": "on",
+    "no-superfluous-tags": "on",
+    "no-trailing-spaces": "on",
+    "no-unnamed-features": "on",
+    "no-unnamed-scenarios": "on",
+    "no-unused-variables": "on",
+    "one-space-between-tags": "on",
+    "scenario-size": [
+        "on",
+        {
+            "steps-length": {
+                "Background": 15,
+                "Scenario": 15
+            }
+        }
+    ],
+    "use-and": "on"
+}
