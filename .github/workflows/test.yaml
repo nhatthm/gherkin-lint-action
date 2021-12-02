@@ -1,0 +1,32 @@
+name: test
+on:
+  push:
+    tags:
+      - v*
+    branches:
+      - master
+      - main
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: test-default
+        uses: ./
+        with:
+          feature_files: tests/default/*
+
+      - name: test-custom
+        uses: ./
+        with:
+          feature_files: tests/custom/*
+          config_file: tests/custom/.gherkin-lintrc
+
+      - name: test-ignore
+        uses: ./
+        with:
+          feature_files: tests/*
+          ignore: tests/custom/*
+

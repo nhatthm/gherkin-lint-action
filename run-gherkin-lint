@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+npm install -g "gherkin-lint@$INPUT_VERSION"
+
+options=()
+
+if [ -n "$INPUT_CONFIG_FILE" ]; then
+    options+=("-c" "$INPUT_CONFIG_FILE")
+fi
+
+if [ -n "$INPUT_FORMAT" ]; then
+    options+=("-f" "$INPUT_FORMAT")
+fi
+
+if [ -n "$INPUT_IGNORE" ]; then
+    options+=("-i" "$INPUT_IGNORE")
+fi
+
+if [ -n "$INPUT_RULE_DIRS" ]; then
+    for ruleDir in $(echo "$INPUT_RULE_DIRS" | tr ',' ' '); do
+        options+=("-r" "$ruleDir")
+    done
+fi
+
+featureFiles=($(echo "${INPUT_FEATURE_FILES:-.}" | tr ',' ' '))
+
+echo
+
+set -ex
+gherkin-lint "${options[@]}" "${featureFiles[@]}"
